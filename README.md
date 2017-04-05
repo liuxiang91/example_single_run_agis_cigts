@@ -1,6 +1,4 @@
-# Project Home Page#
 
-https://bitbucket.org/account/user/KFTNTUM/projects/KFTNT
 
 ### GIT ###
 
@@ -15,15 +13,7 @@ https://bitbucket.org/account/user/KFTNTUM/projects/KFTNT
 ```
 #!bash
 
-git clone https://yourusername@bitbucket.org/url-to-your-repo
-cd your-repo-name
-git submodule add https://yourusername@bitbucket.org/KFTNTUM/kfregression.git
-git submodule add https://yourusername@bitbucket.org/KFTNTUM/kftntcore.git
-git submodule add https://yourusername@bitbucket.org/KFTNTUM/kfdatatools.git
-git submodule add https://yourusername@bitbucket.org/KFTNTUM/kfpareto.git
-git submodule update --recursive --remote
-```
-
+git clone --recursive https://github.com/liuxiang91/exmaple_single_run_agis_cigts.git
 
 * copy Data folder (available at https://drive.google.com/drive/folders/0B5mYtr5eehbCWlBfMFZqMnJTT1U?usp=sharing)  to your-repo-name. Feel free to add other data files to Data folder
 * now you can write and run your own code
