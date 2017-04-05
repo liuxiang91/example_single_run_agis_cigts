@@ -8,7 +8,7 @@
 
 ### How do I get set up? ###
 
-* create your own repository at bitbucket.org
+
 
 ```
 #!bash
