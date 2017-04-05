@@ -3,7 +3,7 @@
 ### GIT ###
 
 * Please learn git (https://try.github.io/levels/1/challenges/1). it only takes 15 min!
-* Register a bitbucket account using your umich email
+
 
 
 ### How do I get set up? ###
