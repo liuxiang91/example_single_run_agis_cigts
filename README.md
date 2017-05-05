@@ -13,7 +13,7 @@
 ```
 #!bash
 Step 1:
-git clone --recursive https://github.com/liuxiang91/exmaple_single_run_agis_cigts.git
+git clone --recursive https://github.com/liuxiang91/example_single_run_agis_cigts.git
 Step 2:
 git submodule foreach git checkout master
 Step 3:
