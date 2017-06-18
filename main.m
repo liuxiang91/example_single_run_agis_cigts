@@ -4,10 +4,15 @@ clear all
 loadModules();
 
 ACRaw=readRawData('rawAGISCIGTS.xlsx');
-[ACInterp,ACRaw]=interpolateData(ACRaw);
-ACProg=labelProgression(ACInterp);
+JPRaw=readRawDataJapan('japanDataRawAll.xlsx');
 
-[ ACProgTrain,ACProgTest,ACRawTrain,ACRawTest ] = splitTrainTest( ACProg,ACRaw, 0.5 );
+ACInterp=interpolateData(ACRaw);
+JPInterp=interpolateDataJapan(JPRaw);
+
+ACProg=labelProgression(ACInterp);
+JPProg=labelProgression(JPInterp);
+
+[ JPProgTrain,JPProgTest,JPRawTrain,JPRawTest ] = splitTrainTest( JPProg,JPRaw, 0.5 );
 
 table1=Table1(ACRawTrain,ACRawTest,ACProgTrain,ACProgTest)
 
@@ -17,13 +22,13 @@ table1=Table1(ACRawTrain,ACRawTest,ACProgTrain,ACProgTest)
 getRegModel( A, C, Q, R, INITX, INITV, ACProgTrain);
 o=readRegCoeff();
 
-[acc,dd]= paretoAnalysis( A,C,Q,R,INITX,INITV,o, ACProgTrain,ACProgTest,0.1,'AC Training','AC Testing');
+[acc,dd]= paretoAnalysis( A,C,Q,R,INITX,INITV,o, ACProgTrain,ACProgTest,0.01,'AC Training','AC Testing',0);
 
 
-beta = 0.98;
-rho=0.37;
-
-save 'temp.mat'
- [~,fd]=forwardTNT(A, C, Q, R, INITV, INITX,o,beta,rho,ACProgTest,6);
-plotTrjectory([],fd,ACRawTest,'');
+% beta = 0.98;
+% rho=0.37;
+% 
+% save 'temp.mat'
+%  [~,fd]=forwardTNT(A, C, Q, R, INITV, INITX,o,beta,rho,ACProgTest,6);
+% plotTrjectory([],fd,ACRawTest,'');
 
